@@ -15,16 +15,6 @@ public class HttpSessionController {
         System.out.println("httpSession = " + httpSession);
         return httpSession.getId();
     }
-
-    @Autowired
-    private SomeOtherService someOtherService;
-
-    @GetMapping("/session2")
-    public String getSession2() {
-        HttpSession httpSession = someOtherService.getHttpSession();
-        System.out.println("httpSession = " + httpSession);
-        return httpSession.getId();
-    }
 }
 
 @Service
