@@ -23,24 +23,24 @@ public class FileDownloadController {
 
         //  Resource downloadResource = new InputStreamResource(soimeinputStream)
         //  Resource downloadResource = new ByteArrayResource(someByteArray)
-        //  Resource downloadResource = new FileSystemResource(someFileSystem)
+        //  Resource downloadResource = new FileSystemResource(someFile)
         final ClassPathResource downloadResource = new ClassPathResource(jpgName);
 
         if (!downloadResource.exists()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 
-        HttpHeaders respHeaders = new HttpHeaders();
+        HttpHeaders headers = new HttpHeaders();
 
         // 1. set the correct content type
-        respHeaders.setContentType(MediaType.IMAGE_JPEG);
+        headers.setContentType(MediaType.IMAGE_JPEG);
 
         // 2. set the correct content length, maybe stored in a db table
-        respHeaders.setContentLength(downloadResource.contentLength());
+        headers.setContentLength(downloadResource.contentLength());
 
         // 3. if you want to force downloads, otherwise attachments might be displayed directly in the brwoser
-        respHeaders.setContentDispositionFormData("attachment", jpgName);
+        headers.setContentDispositionFormData("attachment", jpgName);
 
-        return new ResponseEntity<>(downloadResource, respHeaders, HttpStatus.OK);
+        return new ResponseEntity<>(downloadResource, headers, HttpStatus.OK);
     }
 }

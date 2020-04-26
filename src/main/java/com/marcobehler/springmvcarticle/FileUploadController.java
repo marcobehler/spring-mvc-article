@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 @Controller
 public class FileUploadController {
 
-    @PostMapping("/")
+    @PostMapping("/upload")
     public String handleFileUpload(@RequestParam MultipartFile file) throws IOException {
         // don't generate upload files like this in a real project.
         // give them random names and save their uploaded name as metadata in a database or similar
