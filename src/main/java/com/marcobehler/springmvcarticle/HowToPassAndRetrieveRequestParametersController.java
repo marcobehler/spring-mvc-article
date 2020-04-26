@@ -28,4 +28,10 @@ public class HowToPassAndRetrieveRequestParametersController {
         System.out.println("user = " + user);
         return user;
     }
+
+  /*  @PostMapping("/users3")   *//* Spring will convert this automatically, if you have getters and setters *//*
+    public User createUser4(User user) {
+        System.out.println("user = " + user);
+        return user;
+    }*/
 }
