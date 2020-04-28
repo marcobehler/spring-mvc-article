@@ -5,12 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
+@Controller // <1>
 public class RegistrationController {
 
-    @PostMapping("/register")  // <1>
-    public String createUser2(@RequestParam(required = false) Integer age, @RequestParam String name, Model model) { // <2>
-        User user = new User(name, age); // <3>
+    @PostMapping("/register")  // <2>
+    public String createUser2(@RequestParam(required = false) Integer age, @RequestParam String name, Model model) { // <3>
+        User user = new User(name, age); // <4>
 
         // TODO save user to database
         // userDao.save(user);
@@ -18,7 +18,7 @@ public class RegistrationController {
         // TODO send out registration email
         // mailService.sendRegistrationEmail(user);
 
-        model.addAttribute("user", user); // <4>
-        return "registration-success"; // <5>
+        model.addAttribute("user", user); // <5>
+        return "registration-success"; // <6>
     }
 }
