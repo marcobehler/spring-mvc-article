@@ -13,7 +13,7 @@ public class TomcatApplicationLauncher {
         tomcat.getConnector();
 
         Context ctx = tomcat.addContext("", null);
-        Wrapper servlet = Tomcat.addServlet(ctx, "myServlet", new MyServlet()); // <2>
+        Wrapper servlet = Tomcat.addServlet(ctx, "myServlet", new MyServletV2()); // <2>
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/*"); // <3>
 
