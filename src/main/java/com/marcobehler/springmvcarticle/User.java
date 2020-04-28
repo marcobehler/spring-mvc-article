@@ -11,12 +11,17 @@ public class User {
     public User() {
     }
 
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
     public User(String name, String id) {
         this.name = name;
         this.id = id;
     }
 
-    public User(String name, String id, Integer age) {
+    public User(String id, String name, Integer age) {
         this.name = name;
         this.id = id;
         this.age = age;
