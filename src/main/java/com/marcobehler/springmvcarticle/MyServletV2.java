@@ -16,10 +16,11 @@ public class MyServletV2 extends HttpServlet {
 
             Integer prettyFragileUserId = Integer.valueOf(req.getRequestURI().lastIndexOf("/") + 1); // <2>
 
-            // User user = dao.findUser(prettyFragileUserId)
-
             resp.setContentType("application/json"); // <3>
-            resp.getWriter().print("{\n" +
+
+            // User user = dao.findUser(prettyFragileUserId)
+            // actually: jsonLibrary.toString(user)
+            resp.getWriter().print("{\n" +   // 4<>
                     "  \"id\":" + prettyFragileUserId + ",\n" +
                     "  \"age\": 55,\n" +
                     "  \"name\" : \"John Doe\"\n" +
