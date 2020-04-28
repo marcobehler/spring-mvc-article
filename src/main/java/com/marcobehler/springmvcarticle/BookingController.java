@@ -10,6 +10,7 @@ public class BookingController {
     @PostMapping("/transactions")
     public Transaction transaction(@RequestBody TransactionDto dto) {
         // do something with the dto..create the booking..convert it to a transaction
+        Transaction transaction = null;
         return transaction;
     }
 }
