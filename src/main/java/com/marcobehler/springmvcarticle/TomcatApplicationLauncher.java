@@ -8,15 +8,15 @@ import org.apache.catalina.startup.Tomcat;
 public class TomcatApplicationLauncher {
 
     public static void main(String[] args) throws LifecycleException {
-        Tomcat tomcat = new Tomcat(); // <1>
+        Tomcat tomcat = new Tomcat();
         tomcat.setPort(8080);
         tomcat.getConnector();
 
         Context ctx = tomcat.addContext("", null);
-        Wrapper servlet = Tomcat.addServlet(ctx, "myServlet", new MyServletV2()); // <2>
+        Wrapper servlet = Tomcat.addServlet(ctx, "myServlet", new MyServletV2());
         servlet.setLoadOnStartup(1);
-        servlet.addMapping("/*"); // <3>
+        servlet.addMapping("/*");
 
-        tomcat.start(); // <4>
+        tomcat.start();
     }
 }

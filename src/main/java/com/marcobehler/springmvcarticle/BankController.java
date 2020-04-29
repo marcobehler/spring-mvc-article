@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collections;
 import java.util.List;
 
-@RestController // <1>
+@RestController
 public class BankController {
 
     @GetMapping("/transactions/{userId}")
-    public List<Transaction> transactions(String userId) { // <2>
+    public List<Transaction> transactions(String userId) {
 
         // find transaction by user
         // List<Transaction> = dao.findByUserId(userId);
 
         List<Transaction> transactions = Collections.emptyList();
-        return transactions; // <3>
+        return transactions;
     }
 }
