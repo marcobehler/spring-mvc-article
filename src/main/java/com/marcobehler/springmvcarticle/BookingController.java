@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookingController {
 
     @PostMapping("/transactions")
-    public Transaction transaction(@RequestBody TransactionDto dto) {
+    public Transaction transaction(@RequestBody TransactionDto dto) { // <1>
         // do something with the dto..create the booking..convert it to a transaction
         Transaction transaction = null;
         return transaction;
